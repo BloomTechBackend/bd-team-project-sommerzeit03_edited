@@ -1,0 +1,27 @@
+Resources:
+  TeamsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      "AttributeDefinitions":
+        - "AttributeName": "name"
+          "AttributeType": "S"
+        - "AttributeName": "city"
+          "AttributeType": "S"
+        - "AttributeName": "yearFounded"
+          "AttributeType": "N"
+      "KeySchema":
+        - "AttributeName": "name"
+          "KeyType": "HASH"
+        - "AttributeName": "city"
+          "KeyType": "RANGE"
+      BillingMode: PAY_PER_REQUEST
+      TableName: "Teams"
+      GlobalSecondaryIndexes:
+        - IndexName: "YearFoundedIndex"
+          KeySchema:
+            - AttributeName: "yearFounded"
+              KeyType: "HASH"
+            - AttributeName: "name"
+              KeyType: "RANGE"
+          Projection:
+            ProjectionType: "KEYS_ONLY"
