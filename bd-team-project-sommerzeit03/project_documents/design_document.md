@@ -76,28 +76,18 @@ U6. *As the baseball organization body, I want to update stats for each player*
 ## 6.1. Public Models
 
 ```
-// BaseballPlayer (interface)
+// BaseballPlayer 
 String id
 String name
-char fieldingHand
 Enum position
 Team team
 Contract current contract
-```
-
-```
-// FieldPlayer
-char battingHand
 double battingAverage
 Integer homeruns
 Integer runsBattedIn
 Integer hits
 Integer runsScored
 Integer stolenBases
-```
-
-```
-// Pitcher
 double earnedRunAverage
 Integer strikeouts
 Integer walks
