@@ -1,0 +1,28 @@
+Resources:
+  PitchersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      "AttributeDefinitions":
+        - "AttributeName": "id"
+          "AttributeType": "S"
+        - "AttributeName": "name"
+          "AttributeType": "N"
+        - "AttributeName": "earnedRunsAverage"
+          "AttributeType": "N"
+      "KeySchema":
+        - "AttributeName": "id"
+          "KeyType": "HASH"
+      BillingMode: PAY_PER_REQUEST
+      TableName: "Pitchers"
+      GlobalSecondaryIndexes:
+        - IndexName: "ERAIndex"
+          KeySchema:
+            - AttributeName: "earnedRunsAverage"
+              KeyType: "HASH"
+            - AttributeName: "name"
+              KeyType: "RANGE"
+          Projection:
+            ProjectionType: "INCLUDE"
+            NonKeyAttributes:
+              - "inningsPitched"
+              - "runsAllowed"

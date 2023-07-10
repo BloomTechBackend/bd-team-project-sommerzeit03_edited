@@ -1,5 +1,5 @@
 Resources:
-  PlayersTable:
+  FieldPlayersTable:
     Type: AWS::DynamoDB::Table
     Properties:
       "AttributeDefinitions":
@@ -9,13 +9,11 @@ Resources:
           "AttributeType": "N"
         - "AttributeName": "battingAverage"
           "AttributeType": "N"
-        - "AttributeName": "earnedRunsAverage"
-          "AttributeType": "N"
       "KeySchema":
         - "AttributeName": "id"
           "KeyType": "HASH"
       BillingMode: PAY_PER_REQUEST
-      TableName: "Players"
+      TableName: "FieldPlayers"
       GlobalSecondaryIndexes:
         - IndexName: "BattingAverageIndex"
           KeySchema:
@@ -28,14 +26,3 @@ Resources:
             NonKeyAttributes:
               - "hits"
               - "atBats"
-        - IndexName: "ERAIndex"
-          KeySchema:
-            - AttributeName: "earnedRunsAverage"
-              KeyType: "HASH"
-            - AttributeName: "name"
-              KeyType: "RANGE"
-          Projection:
-            ProjectionType: "INCLUDE"
-            NonKeyAttributes:
-              - "inningsPitched"
-              - "runsAllowed"

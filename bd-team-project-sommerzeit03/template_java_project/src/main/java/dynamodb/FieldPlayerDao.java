@@ -1,9 +1,9 @@
 package main.java.dynamodb;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
-import main.java.dynamodb.models.Player;
+import main.java.dynamodb.models.FieldPlayer;
 
-public class PlayerDao {
+public class FieldPlayerDao {
 
     private final DynamoDBMapper dynamoDBMapper;
 
@@ -11,12 +11,12 @@ public class PlayerDao {
      *
      * @param dynamoDBMapper to interact with the Players table
      */
-    public PlayerDao(DynamoDBMapper dynamoDBMapper) {
+    public FieldPlayerDao(DynamoDBMapper dynamoDBMapper) {
         this.dynamoDBMapper = dynamoDBMapper;
     }
 
-    public Player getPlayer(String id) {
-        Player player = dynamoDBMapper.load(Player.class, id);
+    public FieldPlayer getPlayer(String id) {
+        FieldPlayer player = dynamoDBMapper.load(FieldPlayer.class, id);
 
         return player;
     }

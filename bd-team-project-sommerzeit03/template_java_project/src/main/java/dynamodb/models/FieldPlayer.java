@@ -5,60 +5,23 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
-@DynamoDBTable(tableName = "Players")
-public class Player {
+@DynamoDBTable(tableName = "FieldPlayers")
+public class FieldPlayer {
 
-    @DynamoDBHashKey(attributeName = "id")
     private Integer id;
-
-    @DynamoDBAttribute(attributeName = "name")
     private String name;
-
-    @DynamoDBAttribute(attributeName = "position")
     private String position;
-
-    @DynamoDBAttribute(attributeName = "teamName")
     private String teamName;
-
-    @DynamoDBAttribute(attributeName = "teamCity")
     private String teamCity;
-
-    @DynamoDBAttribute(attributeName = "atBats")
     private Integer atBats;
-
-    @DynamoDBAttribute(attributeName = "hits")
     private Integer hits;
-
-    @DynamoDBAttribute(attributeName = "battingAverage")
     private Double battingAverage;
-
-    @DynamoDBAttribute(attributeName = "homeruns")
     private Integer homeruns;
-
-    @DynamoDBAttribute(attributeName = "runsBattedIn")
     private Integer runsBattedIn;
-
-    @DynamoDBAttribute(attributeName = "runsScored")
     private Integer runsScored;
-
-    @DynamoDBAttribute(attributeName = "stolenBases")
     private Integer stolenBases;
 
-    @DynamoDBAttribute(attributeName = "inningsPitched")
-    private Double inningsPitched;
-
-    @DynamoDBAttribute(attributeName = "runsAllowed")
-    private Integer runsAllowed;
-
-    @DynamoDBAttribute(attributeName = "earnedRunsAverage")
-    private Double earnedRunsAverage;
-
-    @DynamoDBAttribute(attributeName = "strikeouts")
-    private Integer strikeouts;
-
-    @DynamoDBAttribute(attributeName = "walks")
-    private Integer walks;
-
+    @DynamoDBHashKey(attributeName = "id")
     public Integer getId() {
         return id;
     }
@@ -67,6 +30,7 @@ public class Player {
         this.id = id;
     }
 
+    @DynamoDBAttribute(attributeName = "name")
     public String getName() {
         return name;
     }
@@ -75,6 +39,7 @@ public class Player {
         this.name = name;
     }
 
+    @DynamoDBAttribute(attributeName = "position")
     public String getPosition() {
         return position;
     }
@@ -83,6 +48,7 @@ public class Player {
         this.position = position;
     }
 
+    @DynamoDBAttribute(attributeName = "teamName")
     public String getTeamName() {
         return teamName;
     }
@@ -91,6 +57,7 @@ public class Player {
         this.teamName = teamName;
     }
 
+    @DynamoDBAttribute(attributeName = "teamCity")
     public String getTeamCity() {
         return teamCity;
     }
@@ -99,6 +66,7 @@ public class Player {
         this.teamCity = teamCity;
     }
 
+    @DynamoDBAttribute(attributeName = "atBats")
     public Integer getAtBats() {
         return atBats;
     }
@@ -107,6 +75,7 @@ public class Player {
         this.atBats = atBats;
     }
 
+    @DynamoDBAttribute(attributeName = "hits")
     public Integer getHits() {
         return hits;
     }
@@ -115,6 +84,7 @@ public class Player {
         this.hits = hits;
     }
 
+    @DynamoDBAttribute(attributeName = "battingAverage")
     public Double getBattingAverage() {
         return battingAverage;
     }
@@ -123,6 +93,7 @@ public class Player {
         this.battingAverage = battingAverage;
     }
 
+    @DynamoDBAttribute(attributeName = "homeruns")
     public Integer getHomeruns() {
         return homeruns;
     }
@@ -131,6 +102,7 @@ public class Player {
         this.homeruns = homeruns;
     }
 
+    @DynamoDBAttribute(attributeName = "runsBattedIn")
     public Integer getRunsBattedIn() {
         return runsBattedIn;
     }
@@ -139,6 +111,7 @@ public class Player {
         this.runsBattedIn = runsBattedIn;
     }
 
+    @DynamoDBAttribute(attributeName = "runsScored")
     public Integer getRunsScored() {
         return runsScored;
     }
@@ -147,6 +120,7 @@ public class Player {
         this.runsScored = runsScored;
     }
 
+    @DynamoDBAttribute(attributeName = "stolenBases")
     public Integer getStolenBases() {
         return stolenBases;
     }
@@ -155,45 +129,6 @@ public class Player {
         this.stolenBases = stolenBases;
     }
 
-    public Double getInningsPitched() {
-        return inningsPitched;
-    }
-
-    public void setInningsPitched(Double inningsPitched) {
-        this.inningsPitched = inningsPitched;
-    }
-
-    public Integer getRunsAllowed() {
-        return runsAllowed;
-    }
-
-    public void setRunsAllowed(Integer runsAllowed) {
-        this.runsAllowed = runsAllowed;
-    }
-
-    public Double getEarnedRunsAverage() {
-        return earnedRunsAverage;
-    }
-
-    public void setEarnedRunsAverage(Double earnedRunsAverage) {
-        this.earnedRunsAverage = earnedRunsAverage;
-    }
-
-    public Integer getStrikeouts() {
-        return strikeouts;
-    }
-
-    public void setStrikeouts(Integer strikeouts) {
-        this.strikeouts = strikeouts;
-    }
-
-    public Integer getWalks() {
-        return walks;
-    }
-
-    public void setWalks(Integer walks) {
-        this.walks = walks;
-    }
 
 
 

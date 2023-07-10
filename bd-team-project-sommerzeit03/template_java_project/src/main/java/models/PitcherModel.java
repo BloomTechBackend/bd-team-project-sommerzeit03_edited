@@ -1,4 +1,4 @@
 package main.java.models;
 
-public class PlayerModel {
+public class PitcherModel {
 }
