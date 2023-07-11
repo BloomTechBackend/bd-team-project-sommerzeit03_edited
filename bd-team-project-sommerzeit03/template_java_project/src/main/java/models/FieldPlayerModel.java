@@ -1,7 +1,5 @@
 package main.java.models;
 
-import main.java.dynamodb.models.FieldPlayer;
-
 import java.util.Objects;
 
 public class FieldPlayerModel {

@@ -79,7 +79,7 @@ U6. *As the baseball organization body, I want to update stats for each player*
 // FieldPlayer 
 String id
 String name
-Enum position
+String position
 Integer atBats
 double battingAverage
 Integer homeruns
@@ -87,18 +87,6 @@ Integer runsBattedIn
 Integer hits
 Integer runsScored
 Integer stolenBases
-```
-
-```
-// Pitcher
-String id
-String name
-Team team
-Integer earnedRuns
-double inningsPitched
-double earnedRunAverage
-Integer strikeouts
-Integer walks
 ```
 
 ```

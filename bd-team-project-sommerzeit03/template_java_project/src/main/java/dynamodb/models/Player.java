@@ -6,9 +6,9 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 @DynamoDBTable(tableName = "FieldPlayers")
-public class FieldPlayer {
+public class Player {
 
-    private Integer id;
+    private String id;
     private String name;
     private String position;
     private String teamName;
@@ -22,11 +22,11 @@ public class FieldPlayer {
     private Integer stolenBases;
 
     @DynamoDBHashKey(attributeName = "id")
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
