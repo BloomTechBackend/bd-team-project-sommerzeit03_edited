@@ -11,6 +11,8 @@ public class ContractModel {
     private Integer totalYears;
     private Integer signingBonus;
 
+    public ContractModel(){}
+
     public ContractModel(Builder builder) {
         this.id = builder.id;
         this.playerId = builder.playerId;

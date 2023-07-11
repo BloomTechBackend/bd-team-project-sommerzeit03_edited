@@ -7,9 +7,8 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 @DynamoDBTable(tableName = "Pitchers")
 public class Pitcher {
 
-    private Integer id;
+    private String id;
     private String name;
-    private String position;
     private String teamName;
     private String teamCity;
     private Double inningsPitched;
@@ -19,11 +18,11 @@ public class Pitcher {
     private Integer walks;
 
     @DynamoDBHashKey(attributeName = "id")
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
