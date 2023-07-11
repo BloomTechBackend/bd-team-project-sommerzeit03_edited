@@ -2,7 +2,7 @@ package main.java.models;
 
 import java.util.Objects;
 
-public class FieldPlayerModel {
+public class PlayerModel {
 
     private String id;
     private String name;
@@ -17,10 +17,10 @@ public class FieldPlayerModel {
     private Integer runsScored;
     private Integer stolenBases;
 
-    public FieldPlayerModel() {
+    public PlayerModel() {
     }
 
-    public FieldPlayerModel(Builder builder) {
+    public PlayerModel(Builder builder) {
         this.id = builder.id;
         this.name = builder.name;
         this.position = builder.position;
@@ -136,8 +136,8 @@ public class FieldPlayerModel {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof FieldPlayerModel)) return false;
-        FieldPlayerModel that = (FieldPlayerModel) o;
+        if (!(o instanceof PlayerModel)) return false;
+        PlayerModel that = (PlayerModel) o;
         return Objects.equals(getId(), that.getId());
     }
 
@@ -244,8 +244,8 @@ public class FieldPlayerModel {
             return this;
         }
 
-        public FieldPlayerModel build() {
-            return new FieldPlayerModel(this);
+        public PlayerModel build() {
+            return new PlayerModel(this);
         }
 
 
