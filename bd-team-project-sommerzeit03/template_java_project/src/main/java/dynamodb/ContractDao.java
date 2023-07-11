@@ -21,4 +21,10 @@ public class ContractDao {
         return contract;
     }
 
+    public Contract saveContract(Contract contract) {
+        this.dynamoDBMapper.save(contract);
+
+        return contract;
+    }
+
 }

@@ -14,7 +14,6 @@ public class Contract {
     private Integer yearlySalary;
     private Integer totalYears;
     private Integer signingBonus;
-    private ZonedDateTime signedOn;
 
     @DynamoDBAttribute(attributeName = "id")
     public String getId() {
@@ -60,13 +59,5 @@ public class Contract {
     public void setSigningBonus(Integer signingBonus) {
         this.signingBonus = signingBonus;
     }
-
-    @DynamoDBAttribute(attributeName = "signedOn")
-    public ZonedDateTime getSignedOn() {
-        return signedOn;
-    }
-
-    public void setSignedOn(ZonedDateTime signedOn) {
-        this.signedOn = signedOn;
-    }
+    
 }
