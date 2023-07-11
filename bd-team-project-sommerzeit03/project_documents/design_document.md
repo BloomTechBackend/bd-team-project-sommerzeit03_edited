@@ -76,7 +76,7 @@ U6. *As the baseball organization body, I want to update stats for each player*
 ## 6.1. Public Models
 
 ```
-// FieldPlayer 
+// Player 
 String id
 String name
 String position
