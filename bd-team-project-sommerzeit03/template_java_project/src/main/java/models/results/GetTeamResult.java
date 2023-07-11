@@ -1,20 +1,21 @@
 package main.java.models.results;
 
 import main.java.dynamodb.models.Team;
+import main.java.models.TeamModel;
 
 public class GetTeamResult {
 
-    private Team team;
+    private TeamModel team;
 
     public GetTeamResult(Builder builder) {
 
     }
 
-    public Team getTeam() {
+    public TeamModel getTeam() {
         return team;
     }
 
-    public void setTeam(Team team) {
+    public void setTeam(TeamModel team) {
         this.team = team;
     }
 
@@ -23,9 +24,9 @@ public class GetTeamResult {
     }
 
     public static final class Builder {
-        private Team team;
+        private TeamModel team;
 
-        public Builder withTeam(Team teamToUse) {
+        public Builder withTeam(TeamModel teamToUse) {
             this.team = teamToUse;
             return this;
         }

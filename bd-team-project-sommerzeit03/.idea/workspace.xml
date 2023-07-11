@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15f5b144-ebfc-4734-b107-d2b3844a15fa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/activity/CreateContractActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/template_java_project/src/main/java/activity/CreateContractActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/activity/CreatePlayerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/template_java_project/src/main/java/activity/CreatePlayerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/activity/GetContractActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/template_java_project/src/main/java/activity/GetContractActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/activity/GetPlayerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/template_java_project/src/main/java/activity/GetPlayerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/activity/GetTeamActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/template_java_project/src/main/java/activity/GetTeamActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/activity/UpdatePlayerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/template_java_project/src/main/java/activity/UpdatePlayerActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/converters/ModelConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/template_java_project/src/main/java/converters/ModelConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/models/FieldPlayerModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/models/PitcherModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/models/results/CreatePlayerResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/template_java_project/src/main/java/models/results/CreatePlayerResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/models/results/GetPlayerResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/template_java_project/src/main/java/models/results/GetPlayerResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/models/results/GetTeamResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/template_java_project/src/main/java/models/results/GetTeamResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/src/main/java/models/results/UpdatePlayerResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/template_java_project/src/main/java/models/results/UpdatePlayerResult.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

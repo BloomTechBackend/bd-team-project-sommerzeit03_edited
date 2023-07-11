@@ -6,6 +6,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import main.java.converters.ModelConverter;
 import main.java.dynamodb.ContractDao;
 import main.java.dynamodb.TeamDao;
 import main.java.dynamodb.models.Team;
@@ -49,8 +50,10 @@ public class GetTeamActivity implements RequestHandler<GetTeamRequest, GetTeamRe
             throw new TeamNotFoundException("Could not find team.");
         }
 
-        // TODO: converters and return
+        ModelConverter modelConverter = new ModelConverter();
 
-        return null;
+        return GetTeamResult.builder()
+                .withTeam(modelConverter.toTeamModel(teamFromDao))
+                .build();
     }
 }

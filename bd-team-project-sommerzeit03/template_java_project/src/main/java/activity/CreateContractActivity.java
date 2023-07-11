@@ -9,6 +9,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import main.java.converters.ModelConverter;
 import main.java.dynamodb.ContractDao;
 import main.java.dynamodb.models.Contract;
 import main.java.models.requests.CreateContractRequest;
@@ -50,10 +51,10 @@ public class CreateContractActivity implements RequestHandler<CreateContractRequ
 
         Contract contractFromDao = contractDao.saveContract(contract);
 
-//TODO: create a converter
-//        return CreateContractResult.builder()
-//                .withContractModel();
-//
-        return null;
+        ModelConverter modelConverter = new ModelConverter();
+
+        return CreateContractResult.builder()
+                .withContractModel(modelConverter.toContractModel(contract))
+                .build();
     }
 }

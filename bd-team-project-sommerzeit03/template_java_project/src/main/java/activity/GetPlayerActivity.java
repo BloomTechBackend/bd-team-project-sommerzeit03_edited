@@ -6,6 +6,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import main.java.converters.ModelConverter;
 import main.java.dynamodb.PlayerDao;
 import main.java.dynamodb.models.Player;
 import main.java.exceptions.PlayerNotFoundException;
@@ -45,6 +46,10 @@ public class GetPlayerActivity implements RequestHandler<GetPlayerRequest, GetPl
             throw new PlayerNotFoundException();
         }
         // TODO: player model to return result
-        return null;
+        ModelConverter modelConverter = new ModelConverter();
+
+        return GetPlayerResult.builder()
+                .withPlayer(modelConverter.toPlayerModel(player))
+                .build();
     }
 }

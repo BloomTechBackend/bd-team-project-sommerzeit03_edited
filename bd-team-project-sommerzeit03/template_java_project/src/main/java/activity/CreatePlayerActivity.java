@@ -6,6 +6,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import main.java.converters.ModelConverter;
 import main.java.dynamodb.PlayerDao;
 import main.java.dynamodb.models.Player;
 import main.java.models.requests.CreatePlayerRequest;
@@ -57,10 +58,13 @@ public class CreatePlayerActivity implements RequestHandler<CreatePlayerRequest,
         player.setStolenBases(0);
         player.setRunsScored(0);
 
-        //TODO: add converter to return result
 
         playerDao.savePlayer(player);
 
-        return null;
+        ModelConverter modelConverter = new ModelConverter();
+
+        return CreatePlayerResult.builder()
+                .withPlayer(modelConverter.toPlayerModel(player))
+                .build();
     }
 }

@@ -47,7 +47,7 @@ public class ModelConverter {
     }
 
     /**
-     * 
+     *
      * @param contract
      * @return
      */

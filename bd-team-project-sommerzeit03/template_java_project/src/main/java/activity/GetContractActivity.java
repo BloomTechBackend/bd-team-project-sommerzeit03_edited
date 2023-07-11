@@ -6,6 +6,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import main.java.converters.ModelConverter;
 import main.java.dynamodb.ContractDao;
 import main.java.dynamodb.models.Contract;
 import main.java.models.requests.GetContractRequest;
@@ -41,8 +42,11 @@ public class GetContractActivity implements RequestHandler<GetContractRequest, G
         if (contract == null) {
             throw new ConcurrentModificationException("Could not find contract with id: " + requestedId);
         }
-//TODO model converter
 
-        return null;
+        ModelConverter modelConverter = new ModelConverter();
+
+        return GetContractResult.builder()
+                .withContractModel(modelConverter.toContractModel(contract))
+                .build();
     }
 }

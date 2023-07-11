@@ -6,9 +6,11 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import main.java.converters.ModelConverter;
 import main.java.dynamodb.PlayerDao;
 import main.java.dynamodb.models.Player;
 import main.java.exceptions.PlayerNotFoundException;
+import main.java.models.PlayerModel;
 import main.java.models.requests.UpdatePlayerRequest;
 import main.java.models.results.UpdatePlayerResult;
 import org.apache.logging.log4j.LogManager;
@@ -60,8 +62,10 @@ public class UpdatePlayerActivity implements RequestHandler<UpdatePlayerRequest,
 
         playerDao.savePlayer(player);
 
-        // TODO: work on converters
+        ModelConverter modelConverter = new ModelConverter();
 
-        return null;
+        return UpdatePlayerResult.builder()
+                .withPlayer(modelConverter.toPlayerModel(player))
+                .build();
     }
 }
