@@ -3,6 +3,8 @@ package main.java.dynamodb;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import main.java.dynamodb.models.Player;
 
+import javax.inject.Inject;
+
 public class PlayerDao {
 
     private final DynamoDBMapper dynamoDBMapper;
@@ -11,6 +13,7 @@ public class PlayerDao {
      *
      * @param dynamoDBMapper to interact with the Players table
      */
+    @Inject
     public PlayerDao(DynamoDBMapper dynamoDBMapper) {
         this.dynamoDBMapper = dynamoDBMapper;
     }

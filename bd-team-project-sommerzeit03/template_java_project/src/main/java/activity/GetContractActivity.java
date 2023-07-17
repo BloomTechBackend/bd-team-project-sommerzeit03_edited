@@ -14,6 +14,7 @@ import main.java.models.results.GetContractResult;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.inject.Inject;
 import java.util.ConcurrentModificationException;
 
 public class GetContractActivity implements RequestHandler<GetContractRequest, GetContractResult> {
@@ -28,6 +29,11 @@ public class GetContractActivity implements RequestHandler<GetContractRequest, G
                 .build()));
     }
 
+    /**
+     *
+     * @param contractDao contractDao
+     */
+    @Inject
     public GetContractActivity(ContractDao contractDao) {
         this.contractDao = contractDao;
     }

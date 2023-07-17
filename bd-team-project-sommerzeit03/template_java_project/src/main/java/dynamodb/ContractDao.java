@@ -3,6 +3,8 @@ package main.java.dynamodb;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import main.java.dynamodb.models.Contract;
 
+import javax.inject.Inject;
+
 public class ContractDao {
 
     private final DynamoDBMapper dynamoDBMapper;
@@ -11,6 +13,7 @@ public class ContractDao {
      *
      * @param dynamoDBMapper used to interact with the Contracts table
      */
+    @Inject
     public ContractDao(DynamoDBMapper dynamoDBMapper) {
         this.dynamoDBMapper = dynamoDBMapper;
     }

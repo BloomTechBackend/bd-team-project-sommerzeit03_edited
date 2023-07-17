@@ -16,6 +16,8 @@ import main.java.models.results.UpdatePlayerResult;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.inject.Inject;
+
 public class UpdatePlayerActivity implements RequestHandler<UpdatePlayerRequest, UpdatePlayerResult> {
 
     private final Logger log = LogManager.getLogger();
@@ -32,6 +34,7 @@ public class UpdatePlayerActivity implements RequestHandler<UpdatePlayerRequest,
      *
      * @param playerDao
      */
+    @Inject
     public UpdatePlayerActivity(PlayerDao playerDao) {
         this.playerDao = playerDao;
     }

@@ -18,6 +18,8 @@ import main.java.models.results.CreateContractResult;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.inject.Inject;
+
 public class CreateContractActivity implements RequestHandler<CreateContractRequest, CreateContractResult> {
 
     private final Logger log = LogManager.getLogger();
@@ -32,8 +34,9 @@ public class CreateContractActivity implements RequestHandler<CreateContractRequ
 
     /**
      *
-     * @param contractDao
+     * @param contractDao contractDao
      */
+    @Inject
     public CreateContractActivity(ContractDao contractDao) {
         this.contractDao = contractDao;
     }
@@ -41,7 +44,7 @@ public class CreateContractActivity implements RequestHandler<CreateContractRequ
 
     @Override
     public CreateContractResult handleRequest(final CreateContractRequest createContractRequest, Context context) {
-        log.info("Received CreateContractRequest", createContractRequest);
+        log.info("Received CreateContractRequest {}", createContractRequest);
 
         Contract contract = new Contract();
         contract.setId(contract.getId());

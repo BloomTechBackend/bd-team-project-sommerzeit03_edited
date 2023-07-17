@@ -16,6 +16,8 @@ import main.java.models.results.GetTeamResult;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.inject.Inject;
+
 public class GetTeamActivity implements RequestHandler<GetTeamRequest, GetTeamResult> {
 
     private final Logger log = LogManager.getLogger();
@@ -28,6 +30,11 @@ public class GetTeamActivity implements RequestHandler<GetTeamRequest, GetTeamRe
                 .build()));
     }
 
+    /**
+     *
+     * @param teamDao teamDao
+     */
+    @Inject
     public GetTeamActivity(TeamDao teamDao) {
         this.teamDao = teamDao;
     }
