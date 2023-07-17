@@ -14,15 +14,15 @@ Resources:
           "KeyType": "HASH"
       BillingMode: PAY_PER_REQUEST
       TableName: "FieldPlayers"
-      GlobalSecondaryIndexes:
-        - IndexName: "BattingAverageIndex"
-          KeySchema:
-            - AttributeName: "battingAverage"
-              KeyType: "HASH"
-            - AttributeName: "name"
-              KeyType: "RANGE"
-          Projection:
-            ProjectionType: "INCLUDE"
-            NonKeyAttributes:
-              - "hits"
-              - "atBats"
+#      GlobalSecondaryIndexes:
+#        - IndexName: "BattingAverageIndex"
+#          KeySchema:
+#            - AttributeName: "battingAverage"
+#              KeyType: "HASH"
+#            - AttributeName: "name"
+#              KeyType: "RANGE"
+#          Projection:
+#            ProjectionType: "INCLUDE"
+#            NonKeyAttributes:
+#              - "hits"
+#              - "atBats"

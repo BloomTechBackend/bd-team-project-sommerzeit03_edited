@@ -1,6 +1,8 @@
 package main.java.dynamodb.models;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import com.amazonaws.services.dynamodbv2.xspec.S;
 
@@ -15,7 +17,7 @@ public class Contract {
     private Integer totalYears;
     private Integer signingBonus;
 
-    @DynamoDBAttribute(attributeName = "id")
+    @DynamoDBHashKey(attributeName = "id")
     public String getId() {
         return id;
     }
@@ -24,7 +26,7 @@ public class Contract {
         this.id = id;
     }
 
-    @DynamoDBAttribute(attributeName = "playerId")
+    @DynamoDBRangeKey(attributeName = "playerId")
     public String getPlayerId() {
         return playerId;
     }
