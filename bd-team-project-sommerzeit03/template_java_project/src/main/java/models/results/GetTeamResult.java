@@ -8,7 +8,7 @@ public class GetTeamResult {
     private TeamModel team;
 
     public GetTeamResult(Builder builder) {
-
+        this.team = builder.team;
     }
 
     public TeamModel getTeam() {

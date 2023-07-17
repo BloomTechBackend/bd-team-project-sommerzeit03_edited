@@ -18,8 +18,8 @@ public class ContractDao {
         this.dynamoDBMapper = dynamoDBMapper;
     }
 
-    public Contract getContract(String playerId) {
-        Contract contract = this.dynamoDBMapper.load(Contract.class, playerId);
+    public Contract getContract(String id, String playerId) {
+        Contract contract = this.dynamoDBMapper.load(Contract.class, id, playerId);
 
         return contract;
     }

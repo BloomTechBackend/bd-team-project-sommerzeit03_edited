@@ -4,11 +4,13 @@ import java.util.Objects;
 
 public class CreateContractRequest {
 
+    private String id;
     private String playerId;
     private Integer yearlySalary;
     private Integer totalYears;
 
-    public CreateContractRequest(String playerId, Integer yearlySalary, Integer totalYears) {
+    public CreateContractRequest(String id, String playerId, Integer yearlySalary, Integer totalYears) {
+        this.id = id;
         this.playerId = playerId;
         this.yearlySalary = yearlySalary;
         this.totalYears = totalYears;
@@ -18,9 +20,18 @@ public class CreateContractRequest {
     }
 
     public CreateContractRequest(Builder builder) {
+        this.id = builder.id;
         this.playerId = builder.playerId;
         this.yearlySalary = builder.yearlySalary;
         this.totalYears = builder.totalYears;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getPlayerId() {
@@ -52,18 +63,19 @@ public class CreateContractRequest {
         if (this == o) return true;
         if (!(o instanceof CreateContractRequest)) return false;
         CreateContractRequest that = (CreateContractRequest) o;
-        return Objects.equals(getPlayerId(), that.getPlayerId()) && Objects.equals(getYearlySalary(), that.getYearlySalary()) && Objects.equals(getTotalYears(), that.getTotalYears());
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getPlayerId(), that.getPlayerId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getPlayerId(), getYearlySalary(), getTotalYears());
+        return Objects.hash(getId(), getPlayerId());
     }
 
     @Override
     public String toString() {
         return "CreateContractRequest{" +
-                "playedId='" + playerId + '\'' +
+                "contractId='" + id + '\'' +
+                ", playerId='" + playerId + '\'' +
                 ", yearlySalary=" + yearlySalary +
                 ", totalYears=" + totalYears +
                 '}';
@@ -74,12 +86,18 @@ public class CreateContractRequest {
     }
 
     public static final class Builder {
+        private String id;
         private String playerId;
         private Integer yearlySalary;
         private Integer totalYears;
 
         private Builder() {
 
+        }
+
+        public Builder withContractId(String idTouse) {
+            this.id = idTouse;
+            return this;
         }
 
         public Builder withPlayerId(String playerIdToUse) {

@@ -47,7 +47,7 @@ public class CreateContractActivity implements RequestHandler<CreateContractRequ
         log.info("Received CreateContractRequest {}", createContractRequest);
 
         Contract contract = new Contract();
-        contract.setId(contract.getId());
+        contract.setId(createContractRequest.getId());
         contract.setPlayerId(createContractRequest.getPlayerId());
         contract.setYearlySalary(createContractRequest.getYearlySalary());
         contract.setTotalYears(createContractRequest.getTotalYears());

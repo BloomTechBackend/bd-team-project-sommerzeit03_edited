@@ -42,9 +42,10 @@ public class GetContractActivity implements RequestHandler<GetContractRequest, G
     @Override
     public GetContractResult handleRequest(GetContractRequest getContractRequest, Context context) {
 
-        log.info("Received GetContractRequest", getContractRequest);
+        log.info("Received GetContractRequest {}", getContractRequest);
         String requestedId = getContractRequest.getId();
-        Contract contract = contractDao.getContract(requestedId);
+        String requestedPlayerId = getContractRequest.getPlayerId();
+        Contract contract = contractDao.getContract(requestedId, requestedPlayerId);
         if (contract == null) {
             throw new ConcurrentModificationException("Could not find contract with id: " + requestedId);
         }

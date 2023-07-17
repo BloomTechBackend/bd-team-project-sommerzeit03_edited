@@ -54,14 +54,15 @@ public class UpdatePlayerActivity implements RequestHandler<UpdatePlayerRequest,
             throw new PlayerNotFoundException();
         }
 
-        player.setAtBats(updatePlayerRequest.getAtBats());
-        player.setHomeruns(player.getHomeruns());
-        player.setRunsBattedIn(updatePlayerRequest.getRunsBattedIn());
-        player.setHits(updatePlayerRequest.getHits());
-        player.setRunsScored(updatePlayerRequest.getRunsScored());
-        player.setStolenBases(updatePlayerRequest.getStolenBases());
+        player.setAtBats(updatePlayerRequest.getAtBats() + player.getAtBats());
+        player.setHomeruns(player.getHomeruns() + player.getHomeruns());
+        player.setRunsBattedIn(updatePlayerRequest.getRunsBattedIn() + player.getRunsBattedIn());
+        player.setHits(updatePlayerRequest.getHits() + player.getHits());
+        player.setRunsScored(updatePlayerRequest.getRunsScored() + player.getRunsScored());
+        player.setStolenBases(updatePlayerRequest.getStolenBases() + player.getStolenBases());
         // batting average is calculated dividing hits by at bats
-        player.setBattingAverage((double) (player.getHits() / player.getAtBats()));
+        String battingAvg = String.format("%.3f", (double) player.getHits() / player.getAtBats());
+        player.setBattingAverage(Double.valueOf(battingAvg));
 
         playerDao.savePlayer(player);
 

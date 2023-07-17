@@ -1,6 +1,8 @@
 package main.java.dynamodb.models;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 @DynamoDBTable(tableName = "Teams")
@@ -11,7 +13,7 @@ public class Team {
     private Integer yearFounded;
     private String stadium;
 
-    @DynamoDBAttribute(attributeName = "name")
+    @DynamoDBHashKey(attributeName = "name")
     public String getName() {
         return name;
     }
@@ -20,7 +22,7 @@ public class Team {
         this.name = name;
     }
 
-    @DynamoDBAttribute(attributeName = "city")
+    @DynamoDBRangeKey(attributeName = "city")
     public String getCity() {
         return city;
     }

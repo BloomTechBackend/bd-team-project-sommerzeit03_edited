@@ -51,7 +51,7 @@ public class CreatePlayerActivity implements RequestHandler<CreatePlayerRequest,
         player.setId(createPlayerRequest.getId());
         player.setName(createPlayerRequest.getName());
         player.setPosition(createPlayerRequest.getPosition());
-        player.setTeamName(createPlayerRequest.getName());
+        player.setTeamName(createPlayerRequest.getTeamName());
         player.setTeamCity(createPlayerRequest.getTeamCity());
         player.setHits(0);
         player.setHomeruns(0);
