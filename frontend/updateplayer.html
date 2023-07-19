@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta>
+        <title>Update Player Stats</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="updateplayer.js" defer></script>
+    </head>
+    <body>
+        <h1>Update Player Stats</h1>
+        <form action="" method="put" id="updateplayer-form">
+            <label for="id">ID</label><br>
+            <input type="text" name="id" id="id"><br>
+            <label for="atBats">At Bats</label><br>
+            <input type="text" name="atBats" id="atBats"><br>
+            <label for="homeruns">Home Runs</label><br>
+            <input type="text" name="homeruns" id="homeruns"><br>
+            <label for="runsBattedIn">RBIs</label><br>
+            <input type="text" name="runsBattedIn" id="runsBattedIn"><br>
+            <label for="hits">Hits</label><br>
+            <input type="text" name="hits" id="hits"><br>
+            <label for="runsScored">Runs Scored</label><br>
+            <input type="text" name="runsScored" id="runsScored"><br>
+            <label for="stolenBases">Stolen Bases</label><br>
+            <input type="text" name="stolenBases" id="stolenBases"><br><br>
+            <input type="submit" value="Update">
+        </form>
+    </body>
+</html>
